@@ -5,13 +5,13 @@
 columns:
 
     title:
-        label: Title
+        label: octodevel.octoslider::lang.models.item.columns.title
         searchable: true
 
     created_at:
-        label: Created
+        label: octodevel.octoslider::lang.models.item.columns.created_at
         type: datetime
 
     updated_at:
-        label: Updated
+        label: octodevel.octoslider::lang.models.item.columns.updated_at
         type: datetime

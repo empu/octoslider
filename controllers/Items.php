@@ -1,6 +1,7 @@
 <?php namespace OctoDevel\OctoSlider\Controllers;
 
 use Flash;
+use \Lang;
 use BackendMenu;
 use Backend\Classes\Controller;
 use OctoDevel\OctoSlider\Models\Item;
@@ -33,7 +34,7 @@ class Items extends Controller
                 $item->delete();
             }
 
-            Flash::success('Successfully deleted those selected.');
+            Flash::success(Lang::get('octodevel.octoslider::lang.controllers.items.functions.index_onDelete.success'));
         }
 
         return $this->listRefresh();

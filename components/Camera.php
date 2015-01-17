@@ -1,6 +1,7 @@
 <?php namespace OctoDevel\OctoSlider\Components;
 
 use \DB;
+use \Lang;
 use Validator;
 use Cms\Classes\ComponentBase;
 use October\Rain\Support\ValidationException;
@@ -30,8 +31,8 @@ class Camera extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Camera jQuery Plugin',
-            'description' => 'Display a slideshow from a selected octoslider item using Camera free jQuery plugin by Pixedelic.'
+            'name' => 'octodevel.octoslider::lang.components.octosliderCamera.name',
+            'description' => 'octodevel.octoslider::lang.components.octosliderCamera.description'
         ];
     }
 
@@ -39,153 +40,153 @@ class Camera extends ComponentBase
     {
         return [
             'idSlide' => [
-                'title'        => 'Slider',
-                'description'  => 'Choose the slider item that will display.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.idSlide.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.idSlide.description',
                 'type'         => 'dropdown',
                 'default'      => '',
-                'showExternalParameter' => false,
+                'showExternalParam' => false,
             ],
             'jqueryIncludeCamera' => [
-                'title'        => 'Include jQuery',
-                'description'  => 'If enabled the plugin will include jQuery library v1.7.1 in your theme. Requirement: jQuery library 1.4 or higher.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.jqueryIncludeCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.jqueryIncludeCamera.description',
                 'type'         => 'dropdown',
                 'default'      => 'no',
-                'group'        => 'Libraries',
-                'showExternalParameter' => false,
+                'group'        => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.libraries'),
+                'showExternalParam' => false,
             ],
             'jqueryMigrateIncludeCamera' => [
-                'title'        => 'Include jQuery migrate?',
-                'description'  => 'If the plugin is not working with your library, enable this option. The Camera jQuery Plugin have some incompatibilities with new jQuery versions.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.jqueryMigrateIncludeCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.jqueryMigrateIncludeCamera.description',
                 'type'         => 'dropdown',
                 'default'      => 'no',
-                'group'        => 'Libraries',
-                'showExternalParameter' => false,
+                'group'        => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.libraries'),
+                'showExternalParam' => false,
             ],
             'skinCamera' => [
-                'title'        => 'Camera skin',
-                'description'  => 'Choose the skin the do you like to use with Camera Plugin.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.skinCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.skinCamera.description',
                 'type'         => 'dropdown',
                 'default'      => 'camera_azure_skin',
-                'group'        => 'Options',
-                'showExternalParameter' => false,
+                'group'        => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'navigationCamera' => [
-                'title'        => 'Display navigation',
-                'description'  => 'If enabled the navigation button (prev, next and play/stop buttons) will be visible, if false they will be always hidden.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.navigationCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.navigationCamera.description',
                 'type'         => 'dropdown',
                 'default'      => 'false',
-                'group'        => 'Options',
-                'showExternalParameter' => false,
+                'group'        => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'hoverCamera' => [
-                'title'       => 'Pause on hover',
-                'description' => 'Pause on state hover. Not available for mobile devices.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.hoverCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.hoverCamera.description',
                 'type'        => 'dropdown',
                 'default'     => 'true',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'thumbnailsCamera' => [
-                'title'       => 'Display thumbnails',
-                'description' => 'Display thumbnails from the slider items image.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.thumbnailsCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.thumbnailsCamera.description',
                 'type'        => 'dropdown',
                 'default'     => 'true',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'playPauseCamera' => [
-                'title'       => 'Display play/pause buttons',
-                'description' => 'Display play/pause buttons control.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.playPauseCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.playPauseCamera.description',
                 'type'        => 'dropdown',
                 'default'     => 'false',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'paginationCamera' => [
-                'title'       => 'Display pagination',
-                'description' => 'Display slider pagination.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.paginationCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.paginationCamera.description',
                 'type'        => 'dropdown',
                 'default'     => 'true',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'captionEffectCamera' => [
-                'title'       => 'Image caption effect',
-                'description' => 'Choose what effect the image captions will have.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.captionEffectCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.captionEffectCamera.description',
                 'type'        => 'dropdown',
                 'default'     => 'fadeFromBottom',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'loaderCamera' => [
-                'title'       => 'Display loader',
-                'description' => 'Display a loader status.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderCamera.description',
                 'type'        => 'dropdown',
                 'default'     => 'pie',
-                'group'       => 'Loader',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.loader'),
+                'showExternalParam' => false,
             ],
             'loaderColorCamera' => [
-                'title'       => 'Loader color',
-                'description' => 'Use a hexadecimal web color.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderColorCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderColorCamera.description',
                 'type'        => 'string',
                 'default'     => '#eeeeee',
-                'group'       => 'Loader',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.loader'),
+                'showExternalParam' => false,
             ],
             'loaderBgColorCamera' => [
-                'title'       => 'Loader background color',
-                'description' => 'Use a hexadecimal web color.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderBgColorCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderBgColorCamera.description',
                 'type'        => 'string',
                 'default'     => '#222222',
-                'group'       => 'Loader',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.loader'),
+                'showExternalParam' => false,
             ],
             'loaderOpacityCamera' => [
-                'title'       => 'Loader opacity',
-                'description' => 'Accpted values are: 0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderOpacityCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderOpacityCamera.description',
                 'type'        => 'string',
                 'validationPattern' => '^(\.[1-9]|0|1)$',
-                'validationMessage' => 'Invalid format. Accpted values are: 0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1',
+                'validationMessage' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.properties.loaderStrokeCamera.validationMessage'),
                 'default'     => '.8',
-                'group'       => 'Loader',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.loader'),
+                'showExternalParam' => false,
             ],
             'loaderPaddingCamera' => [
-                'title'       => 'Loader padding',
-                'description' => 'How many empty pixels you want to display between the loader and its background.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderPaddingCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderPaddingCamera.description',
                 'type'        => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'Invalid format.',
+                'validationMessage' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.properties.loaderStrokeCamera.validationMessage'),
                 'default'     => '2',
-                'group'       => 'Loader',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.loader'),
+                'showExternalParam' => false,
             ],
             'loaderStrokeCamera' => [
-                'title'       => 'Loader stroke',
-                'description' => 'The thickness both of the pie loader and of the bar loader. Remember: for the pie, the loader thickness must be less than a half of the pie diameter.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderStrokeCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.loaderStrokeCamera.description',
                 'type'        => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'Invalid format.',
+                'validationMessage' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.properties.loaderStrokeCamera.validationMessage'),
                 'default'     => '7',
-                'group'       => 'Loader',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.loader'),
+                'showExternalParam' => false,
             ],
             'barPositionCamera' => [
-                'title'       => 'Loader bar position',
-                'description' => 'Choose the loader bar position.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.barPositionCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.barPositionCamera.description',
                 'type'        => 'dropdown',
                 'default'     => 'bottom',
-                'group'       => 'Loader',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.loader'),
+                'showExternalParam' => false,
             ],
             'barDirectionCamera' => [
-                'title'       => 'Loader bar direction',
-                'description' => 'Choose the loader bar direction if your "Display loader" choice was "Bar".',
+                'title' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.barDirectionCamera.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderCamera.properties.barDirectionCamera.description',
                 'type'        => 'dropdown',
                 'default'     => 'leftToRight',
-                'group'       => 'Loader',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.propertyGroups.loader'),
+                'showExternalParam' => false,
             ]
         ];
     }
@@ -194,7 +195,7 @@ class Camera extends ComponentBase
     {
         $slides = SliderItem::all();
 
-        $array_dropdown = ['0'=>'- select one - '];
+        $array_dropdown = [0 => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.select_one')];
 
         foreach ($slides as $slide)
         {
@@ -206,12 +207,12 @@ class Camera extends ComponentBase
 
     public function getJqueryIncludeCameraOptions()
     {
-        return ['no' => 'No', 'yes' => 'Yes'];
+        return ['no' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.no'), 'yes' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.yes')];
     }
 
     public function getJqueryMigrateIncludeCameraOptions()
     {
-        return ['no' => 'No', 'yes' => 'Yes'];
+        return ['no' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.no'), 'yes' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.yes')];
     }
 
     public function getSkinCameraOptions()
@@ -255,7 +256,7 @@ class Camera extends ComponentBase
 
     public function getNavigationCameraOptions()
     {
-        return ['false' => 'No', 'true' => 'Yes'];
+        return ['false' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.no'), 'true' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.yes')];
     }
 
     public function getLoaderCameraOptions()
@@ -265,22 +266,22 @@ class Camera extends ComponentBase
 
     public function getHoverCameraOptions()
     {
-        return ['false' => 'No', 'true' => 'Yes'];
+        return ['false' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.no'), 'true' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.yes')];
     }
 
     public function getThumbnailsCameraOptions()
     {
-        return ['false' => 'No', 'true' => 'Yes'];
+        return ['false' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.no'), 'true' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.yes')];
     }
 
     public function getPlayPauseCameraOptions()
     {
-        return ['false' => 'No', 'true' => 'Yes'];
+        return ['false' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.no'), 'true' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.yes')];
     }
 
     public function getPaginationCameraOptions()
     {
-        return ['false' => 'No', 'true' => 'Yes'];
+        return ['false' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.no'), 'true' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.yes')];
     }
 
     public function getBarDirectionCameraOptions()
@@ -290,7 +291,12 @@ class Camera extends ComponentBase
 
     public function getBarPositionCameraOptions()
     {
-        return ['left' => 'Left', 'right' => 'Right', 'top' => 'Top', 'bottom' => 'Bottom'];
+        return [
+            'left' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.left'),
+            'right' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.right'),
+            'top' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.top'),
+            'bottom' => Lang::get('octodevel.octoslider::lang.components.octosliderCamera.default.options.bottom')
+        ];
     }
 
     public function getCaptionEffectCameraOptions()

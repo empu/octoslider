@@ -1,6 +1,7 @@
 <?php namespace OctoDevel\OctoSlider\Components;
 
 use \DB;
+use \Lang;
 use Validator;
 use Cms\Classes\ComponentBase;
 use October\Rain\Support\ValidationException;
@@ -13,8 +14,8 @@ class Simple extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Simple Item',
-            'description' => 'Display a selected octoslider item. You can use any jQuery slideshow plugin you want.'
+            'name' => 'octodevel.octoslider::lang.components.octosliderSimple.name',
+            'description' => 'octodevel.octoslider::lang.components.octosliderSimple.description'
         ];
     }
 
@@ -22,11 +23,11 @@ class Simple extends ComponentBase
     {
         return [
             'idSlide' => [
-                'title'        => 'Slider',
-                'description'  => 'Choose the slider item that will display.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderSimple.properties.idSlide.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderSimple.properties.idSlide.description',
                 'type'         => 'dropdown',
                 'default'      => '',
-                'showExternalParameter' => false,
+                'showExternalParam' => false,
             ]
         ];
     }
@@ -35,7 +36,7 @@ class Simple extends ComponentBase
     {
         $slides = SliderItem::all();
 
-        $array_dropdown = ['0'=>'- select one - '];
+        $array_dropdown = [0 => Lang::get('octodevel.octoslider::lang.components.octosliderSimple.default.options.select_one')];
 
         foreach ($slides as $slide)
         {

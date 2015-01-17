@@ -1,6 +1,7 @@
 <?php namespace OctoDevel\OctoSlider\Components;
 
 use \DB;
+use \Lang;
 use Validator;
 use Cms\Classes\ComponentBase;
 use October\Rain\Support\ValidationException;
@@ -30,8 +31,8 @@ class Nivo extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Nivo jQuery Plugin',
-            'description' => 'Display a slideshow from a selected octoslider item using Nivo Slider jQuery Plugin by Dev7Studios.'
+            'name' => 'octodevel.octoslider::lang.components.octosliderNivo.name',
+            'description' => 'octodevel.octoslider::lang.components.octosliderNivo.description'
         ];
     }
 
@@ -39,158 +40,158 @@ class Nivo extends ComponentBase
     {
         return [
             'idSlide' => [
-                'title'        => 'Slider',
-                'description'  => 'Choose the slider item that will display.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.idSlide.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.idSlide.description',
                 'type'         => 'dropdown',
                 'default'      => '',
-                'showExternalParameter' => false,
+                'showExternalParam' => false,
             ],
             'jqueryIncludeNivo' => [
-                'title'        => 'Include jQuery',
-                'description'  => 'If enabled the plugin will include jQuery library v1.9 in your theme. Requirement: jQuery library 1.7 or higher.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.jqueryIncludeNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.jqueryIncludeNivo.description',
                 'type'         => 'dropdown',
                 'default'      => 'no',
-                'showExternalParameter' => false,
+                'showExternalParam' => false,
             ],
             'effectNivo' => [
-                'title'        => 'Effects',
-                'description'  => 'Specify the effect for your slides.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.effectNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.effectNivo.description',
                 'type'         => 'dropdown',
                 'default'      => 'random',
-                'group'        => 'Effects',
-                'showExternalParameter' => false,
+                'group'        => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.effects'),
+                'showExternalParam' => false,
             ],
             'slicesNivo' => [
-                'title'        => 'Slices',
-                'description'  => 'For slice animations.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.slicesNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.slicesNivo.description',
                 'type'         => 'string',
                 'validationPattern' => '^[1-9]+$',
-                'validationMessage' => 'Invalid format.',
+                'validationMessage' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.properties.slicesNivo.validationMessage'),
                 'default'      => '15',
-                'group'        => 'Effects',
-                'showExternalParameter' => false,
+                'group'        => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.effects'),
+                'showExternalParam' => false,
             ],
             'boxColsNivo' => [
-                'title'       => 'Box Cols',
-                'description' => 'For box animations.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.boxColsNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.boxColsNivo.description',
                 'type'        => 'string',
                 'validationPattern' => '^[1-9]+$',
-                'validationMessage' => 'Invalid format.',
+                'validationMessage' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.properties.boxColsNivo.validationMessage'),
                 'default'     => '8',
-                'group'       => 'Effects',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.effects'),
+                'showExternalParam' => false,
             ],
             'boxRowsNivo' => [
-                'title'       => 'Box Rows',
-                'description' => 'For box animations.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.boxRowsNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.boxRowsNivo.description',
                 'type'        => 'string',
                 'validationPattern' => '^[1-9]+$',
-                'validationMessage' => 'Invalid format.',
+                'validationMessage' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.properties.boxRowsNivo.validationMessage'),
                 'default'     => '4',
-                'group'       => 'Effects',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.effects'),
+                'showExternalParam' => false,
             ],
             'animSpeedNivo' => [
-                'title'       => 'Animation Speed',
-                'description' => 'Slide transition speed',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.animSpeedNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.animSpeedNivo.description',
                 'type'        => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'Invalid format.',
+                'validationMessage' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.properties.animSpeedNivo.validationMessage'),
                 'default'     => '500',
-                'group'       => 'Effects',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.effects'),
+                'showExternalParam' => false,
             ],
             'pauseTimeNivo' => [
-                'title'       => 'Pause Time',
-                'description' => 'How long each slide will show',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.pauseTimeNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.pauseTimeNivo.description',
                 'type'        => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'Invalid format.',
+                'validationMessage' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.properties.pauseTimeNivo.validationMessage'),
                 'default'     => '3000',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'startSlideNivo' => [
-                'title'       => 'Start Slide',
-                'description' => 'Set starting Slide (0 index).',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.startSlideNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.startSlideNivo.description',
                 'type'        => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'Invalid format.',
+                'validationMessage' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.properties.startSlideNivo.validationMessage'),
                 'default'     => '0',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'directionNavNivo' => [
-                'title'       => 'Direction Navigation',
-                'description' => 'Display Next & Prev navigation',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.directionNavNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.directionNavNivo.description',
                 'type'        => 'dropdown',
                 'default'     => 'true',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'controlNavNivo' => [
-                'title'       => 'Control Navigation',
-                'description' => 'Display 1,2,3... navigation.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.controlNavNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.controlNavNivo.description',
                 'type'        => 'dropdown',
                 'default'     => 'true',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'controlNavThumbsNivo' => [
-                'title'       => 'Control Navigation Thumbs',
-                'description' => 'Use thumbnails for Control Navigation.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.controlNavThumbsNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.controlNavThumbsNivo.description',
                 'type'        => 'dropdown',
                 'default'     => 'false',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'pauseOnHoverNivo' => [
-                'title'       => 'Pause on Hover',
-                'description' => 'Pause on state hover. Not available for mobile devices.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.pauseOnHoverNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.pauseOnHoverNivo.description',
                 'type'        => 'dropdown',
                 'default'     => 'true',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'manualAdvanceNivo' => [
-                'title'       => 'Manual Advance',
-                'description' => 'Force manual transitions.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.manualAdvanceNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.manualAdvanceNivo.description',
                 'type'        => 'dropdown',
                 'default'     => 'false',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'randomStartNivo' => [
-                'title'       => 'Random Start',
-                'description' => 'Start on a random slide.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.randomStartNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.randomStartNivo.description',
                 'type'        => 'dropdown',
                 'default'     => 'false',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'themeNivo' => [
-                'title'       => 'Theme',
-                'description' => 'Set a theme for your Nivo Slider or set as none to use your own.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.themeNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.themeNivo.description',
                 'type'        => 'dropdown',
                 'default'     => 'default',
-                'group'       => 'Options',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.options'),
+                'showExternalParam' => false,
             ],
             'prevTextNivo' => [
-                'title'       => 'Prev Text',
-                'description' => 'Prev direction navigation text.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.prevTextNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.prevTextNivo.description',
                 'type'        => 'string',
                 'default'     => 'Prev',
-                'group'       => 'Translations',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.translations'),
+                'showExternalParam' => false,
             ],
             'nextTextNivo' => [
-                'title'       => 'Next Text',
-                'description' => 'Next direction navigation text.',
+                'title' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.nextTextNivo.title',
+                'description' => 'octodevel.octoslider::lang.components.octosliderNivo.properties.nextTextNivo.description',
                 'type'        => 'string',
                 'default'     => 'Next',
-                'group'       => 'Translations',
-                'showExternalParameter' => false,
+                'group'       => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.propertyGroups.translations'),
+                'showExternalParam' => false,
             ],
 
         ];
@@ -200,7 +201,7 @@ class Nivo extends ComponentBase
     {
         $slides = SliderItem::all();
 
-        $array_dropdown = ['0'=>'- select one - '];
+        $array_dropdown = [0 => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.select_one')];
 
         foreach ($slides as $slide)
         {
@@ -212,64 +213,64 @@ class Nivo extends ComponentBase
 
     public function getJqueryIncludeNivoOptions()
     {
-        return ['no' => 'No', 'yes' => 'Yes'];
+        return ['no' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.no'), 'yes' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.yes')];
     }
 
     public function getEffectNivoOptions()
     {
         return [
-            'random'    => 'Random',
-            'sliceDown'     => 'Slice Down',
-            'sliceDownLeft'       => 'Slice Down Left',
-            'sliceUp'     => 'Slice Up',
-            'sliceUpLeft'     => 'Slice up Left',
-            'sliceUpDown'     => 'Slice up Down',
-            'sliceUpDownLeft'      => 'Slice up Down Left',
-            'fold'     => 'Fold',
-            'fade'  => 'Fade',
-            'slideInRight' => 'Slide in Right',
-            'slideInLeft'    => 'Slide in Left',
-            'boxRandom'      => 'Box Random',
-            'boxRain'   => 'Box Rain',
-            'boxRainReverse'      => 'Box Rain Reverse',
-            'boxRainGrow'     => 'Box Rain Grow',
-            'boxRainGrowReverse'      => 'Box Rain Grow Reverse'
+            'random'             => 'Random',
+            'sliceDown'          => 'Slice Down',
+            'sliceDownLeft'      => 'Slice Down Left',
+            'sliceUp'            => 'Slice Up',
+            'sliceUpLeft'        => 'Slice up Left',
+            'sliceUpDown'        => 'Slice up Down',
+            'sliceUpDownLeft'    => 'Slice up Down Left',
+            'fold'               => 'Fold',
+            'fade'               => 'Fade',
+            'slideInRight'       => 'Slide in Right',
+            'slideInLeft'        => 'Slide in Left',
+            'boxRandom'          => 'Box Random',
+            'boxRain'            => 'Box Rain',
+            'boxRainReverse'     => 'Box Rain Reverse',
+            'boxRainGrow'        => 'Box Rain Grow',
+            'boxRainGrowReverse' => 'Box Rain Grow Reverse'
         ];
     }
 
     public function getDirectionNavNivoOptions()
     {
-        return ['false' => 'No', 'true' => 'Yes'];
+        return ['false' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.no'), 'true' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.yes')];
     }
 
     public function getControlNavNivoOptions()
     {
-        return ['false' => 'No', 'true' => 'Yes'];
+        return ['false' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.no'), 'true' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.yes')];
     }
 
     public function getControlNavThumbsNivoOptions()
     {
-        return ['false' => 'No', 'true' => 'Yes'];
+        return ['false' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.no'), 'true' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.yes')];
     }
 
     public function getPauseOnHoverNivoOptions()
     {
-        return ['false' => 'No', 'true' => 'Yes'];
+        return ['false' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.no'), 'true' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.yes')];
     }
 
     public function getManualAdvanceNivoOptions()
     {
-        return ['false' => 'No', 'true' => 'Yes'];
+        return ['false' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.no'), 'true' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.yes')];
     }
 
     public function getRandomStartNivoOptions()
     {
-        return ['false' => 'No', 'true' => 'Yes'];
+        return ['false' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.no'), 'true' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.yes')];
     }
 
     public function getThemeNivoOptions()
     {
-        return ['none' => '- none -', 'default' => 'Default', 'bar' => 'Bar', 'dark' => 'Dark', 'light' => 'Light'];
+        return ['none' => Lang::get('octodevel.octoslider::lang.components.octosliderNivo.default.options.none'), 'default' => 'Default', 'bar' => 'Bar', 'dark' => 'Dark', 'light' => 'Light'];
     }
 
     public function onRun()

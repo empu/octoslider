@@ -13,3 +13,5 @@
     - Fixed bugs with web root path
 1.0.6:
     - Fixed previous bugs
+1.0.7:
+    - Translations applied to the plugin. Fixed showExternalParameter to showExternalParam property on component

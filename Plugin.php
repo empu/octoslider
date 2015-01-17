@@ -1,19 +1,18 @@
 <?php namespace OctoDevel\OctoSlider;
 
 use Backend;
-use Controller;
+use \Lang;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
-
     public function pluginDetails()
     {
         return [
-            'name'        => 'Octo Slider',
-            'description' => 'Create a slideshow for your website using jquery slideshow plugins.',
-            'author'      => 'Octo Devel',
-            'icon'        => 'icon-play-circle-o'
+            'name' => Lang::get('octodevel.octoslider::lang.app.name'),
+            'description' => Lang::get('octodevel.octoslider::lang.app.description'),
+            'author' => Lang::get('octodevel.octoslider::lang.app.author'),
+            'icon' => Lang::get('octodevel.octoslider::lang.app.icon')
         ];
     }
 
@@ -30,14 +29,14 @@ class Plugin extends PluginBase
     {
         return [
             'octoslider' => [
-                'label'       => 'Octo Slider',
+                'label'       => Lang::get('octodevel.octoslider::lang.app.name'),
                 'url'         => Backend::url('octodevel/octoslider/items'),
                 'icon'        => 'icon-play-circle-o',
                 'permissions' => ['octoslider.*'],
                 'order'       => 500,
                 'sideMenu' => [
                     'items' => [
-                        'label'       => 'Sliders',
+                        'label'       => Lang::get('octodevel.octoslider::lang.navigation.items'),
                         'icon'        => 'icon-picture-o',
                         'url'         => Backend::url('octodevel/octoslider/items'),
                         'permissions' => ['octoslider.access_items'],
@@ -47,4 +46,10 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerPermissions()
+    {
+        return [
+            'octodevel.octoslider.access_items' => ['label' => Lang::get('octodevel.octoslider::lang.permissions.access_items'), 'tab' => 'OctoDevel'],
+        ];
+    }
 }

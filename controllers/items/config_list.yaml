@@ -9,7 +9,7 @@ list: @/plugins/octodevel/octoslider/models/item/columns.yaml
 modelClass: OctoDevel\OctoSlider\Models\Item
 
 # List Title
-title: Manage OctoSlider Items
+title: octodevel.octoslider::lang.controllers.items.config_list.title
 
 # Link URL for each record
 recordUrl: octodevel/octoslider/items/update/:id

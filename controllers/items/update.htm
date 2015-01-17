@@ -1,7 +1,7 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('octodevel/octoslider/items') ?>">OctoSlider Item</a></li>
-        <li><?= e($this->pageTitle) ?></li>
+        <li><a href="<?= Backend::url('octodevel/octoslider/items') ?>"><?= e(trans('octodevel.octoslider::lang.controllers.items.title')) ?></a></li>
+        <li><?= e(trans($this->pageTitle)) ?></li>
     </ul>
 <?php Block::endPut() ?>
 
@@ -16,37 +16,37 @@
                 <button
                     type="submit"
                     data-request="onSave"
-                    data-request-data="redirect:0"
                     data-hotkey="ctrl+s"
                     data-hotkey-mac="cmd+s"
-                    data-load-indicator="Saving Item..."
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
                     class="btn btn-primary">
-                    <u>S</u>ave
+                    <?= e(trans('backend::lang.form.create')) ?>
                 </button>
                 <button
                     type="button"
                     data-request="onSave"
                     data-request-data="close:1"
-                    data-hotkey="ctrl+enter"
-                    data-hotkey-mac="cmd+enter"
-                    data-load-indicator="Saving Item..."
+                    data-hotkey="ctrl+enter, cmd+enter"
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
                     class="btn btn-default">
-                    Save and Close
+                    <?= e(trans('backend::lang.form.create_and_close')) ?>
                 </button>
                 <button
                     type="button"
                     class="oc-icon-trash-o btn-icon danger pull-right"
                     data-request="onDelete"
-                    data-load-indicator="Deleting Item..."
-                    data-request-confirm="Do you really want to delete this item?">
+                    data-load-indicator="<?= e(trans('backend::lang.form.deleting')) ?>"
+                    data-request-confirm="<?= e(trans('octodevel.octoslider::lang.controllers.default.confirm.delete')) ?>">
                 </button>
-
-                <span class="btn-text">or <a href="<?= Backend::url('octodevel/octoslider/items') ?>">Cancel</a></span>
+                <span class="btn-text">
+                    <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('octodevel/octoslider/items') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
+                </span>
             </div>
         </div>
+
     <?= Form::close() ?>
 
 <?php else: ?>
-    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('octodevel/octoslider/items') ?>" class="btn btn-default">Return to the item list</a></p>
+    <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
+    <p><a href="<?= Backend::url('octodevel/octoslider/items ') ?>" class="btn btn-default"><?= e(trans('octodevel.octoslider::lang.controllers.default.return_to_items')) ?></a></p>
 <?php endif ?>

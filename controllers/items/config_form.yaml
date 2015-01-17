@@ -2,7 +2,7 @@
 #  Form Behavior Config
 # ===================================
 
-name: Slider
+name: octodevel.octoslider::lang.controllers.items.config_form.name
 form: @/plugins/octodevel/octoslider/models/item/fields.yaml
 modelClass: OctoDevel\OctoSlider\Models\Item
 defaultRedirect: octodevel/octoslider/items

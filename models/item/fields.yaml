@@ -5,10 +5,10 @@
 fields:
 
     title:
-        label: Title
+        label: octodevel.octoslider::lang.models.item.fields.label.title
 
     images:
-        label: Images
+        label: octodevel.octoslider::lang.models.item.fields.label.images
         type: fileupload
         mode: image
         image-width: 240
