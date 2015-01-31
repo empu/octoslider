@@ -5,8 +5,6 @@ return [
     'app' => [
         'name' => 'Slider',
         'description' => 'Create a slideshow for your website using jquery slideshow plugins.',
-        'author' => 'Octo Devel',
-        'icon' => 'icon-play-circle-o'
     ],
     'navigation' => [
         'items' => 'Sliders',

@@ -15,3 +15,5 @@
     - Fixed previous bugs
 1.0.7:
     - Translations applied to the plugin. Fixed showExternalParameter to showExternalParam property on component
+1.0.8:
+    - Fixed issues

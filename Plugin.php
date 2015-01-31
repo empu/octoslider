@@ -11,8 +11,9 @@ class Plugin extends PluginBase
         return [
             'name' => Lang::get('octodevel.octoslider::lang.app.name'),
             'description' => Lang::get('octodevel.octoslider::lang.app.description'),
-            'author' => Lang::get('octodevel.octoslider::lang.app.author'),
-            'icon' => Lang::get('octodevel.octoslider::lang.app.icon')
+            'author' => 'Octo Devel',
+            'homepage' => 'http://octodevel.com',
+            'icon' => 'icon-play-circle-o'
         ];
     }
 
